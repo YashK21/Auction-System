@@ -1,15 +1,11 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-const Login = () => {
-  const navigate = useNavigate()
+const Register = () => {
+  const navigate = useNavigate();
   const handleLogin = () => {
-    console.log("first")
-    navigate("/instructions")
-  }
-  const handleRegistration = () => {
-    console.log("moving to registration")
-    navigate("/register")
-  }
+    console.log("moving to login");
+    navigate("/");
+  };
   return (
     <div>
       <section className="bg-gray-50 dark:bg-gray-900">
@@ -17,7 +13,7 @@ const Login = () => {
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                Sign in to your account
+                Create account
               </h1>
               <form className="space-y-4 md:space-y-6">
                 <div>
@@ -52,24 +48,39 @@ const Login = () => {
                     required=""
                   />
                 </div>
+                <div>
+                  <label
+                    htmlFor="cpassword"
+                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Confirm Password
+                  </label>
+                  <input
+                    type="password"
+                    name="cpassword"
+                    id="cpassword"
+                    placeholder="••••••••"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required=""
+                  />
+                </div>
 
                 <button
-                onClick={handleLogin}
+                  onClick={handleLogin}
                   type="button"
                   class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                 >
-                  Sign in
+                  Sign Up
                 </button>
 
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                  Don’t have an account yet?
-                  {" "}
+                  Have an account?{" "}
                   <button
-                  onClick={handleRegistration}
+                    onClick={handleLogin}
                     type="button"
                     class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                   >
-                    Sign up
+                    Login
                   </button>
                 </p>
               </form>
@@ -81,4 +92,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
